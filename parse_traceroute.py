@@ -70,10 +70,13 @@ with open(log_file) as f:
         ys.append(avg_latency)
 
 width = len(xs) / 3
-plt.figure(figsize=(width, 4.8))
+fig = plt.figure(figsize=(width, 4.8))
+fig.subplots_adjust(bottom=0.5)
 
 plt.plot(xs, ys)
 
+plt.title(f'{log_file}, {is_target_hop.__name__}')
+plt.ylabel('ms')
 plt.xticks(rotation=-90)
 plt.xlim(-1, len(xs))
 plt.ylim(0, 175)
