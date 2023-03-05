@@ -35,8 +35,8 @@ log_file = 'cloudflare.txt'
 
 # is_target_hop = is_usg
 # is_target_hop = is_cmts
-is_target_hop = is_rcn
-# is_target_hop = is_cloudflare
+# is_target_hop = is_rcn
+is_target_hop = is_cloudflare
 # is_target_hop = is_google
 
 xs = []
