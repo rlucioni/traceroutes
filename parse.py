@@ -50,7 +50,7 @@ for traceroute in traceroutes.values():
     # USG (external gateway)
     # ys.append(traceroute[0]['rtt'])
     
-    # # CMTS?
+    # CMTS?
     # ys.append(traceroute[1]['rtt'])
 
     # RCN
