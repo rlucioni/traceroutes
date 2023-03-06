@@ -6,13 +6,13 @@ Tools for generating and navigating lots of `traceroute` output. After activatin
 make requirements
 ```
 
-Run the `traceroute-loop.sh` script to log `traceroute` output to text files:
+Run the `loop.sh` script to log `traceroute` output to text files under `data/`:
 
 ```sh
-./traceroute-loop.sh
+./loop.sh
 ```
 
-Use the `parse_traceroute.py` script to parse and plot the logged output, to help hone in on interesting periods to look at in the output. It's bound to a Jupyter notebook with [Jupytext](https://github.com/mwouts/jupytext). To open it, start Jupyter Notebook with:
+Use the `parse.py` script to manipulate the logged output, to help hone in on interesting periods to look at in the logs. It's bound to a Jupyter notebook with [Jupytext](https://github.com/mwouts/jupytext). To open it, start Jupyter Notebook with:
 
 ```sh
 make notebook

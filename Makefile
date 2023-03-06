@@ -1,5 +1,5 @@
 notebook:
-	jupyter notebook parse_traceroute.py
+	jupyter notebook parse.py
 
 requirements:
 	pip install -r requirements.txt
