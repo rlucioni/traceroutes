@@ -12,10 +12,12 @@ def strip_parens(val):
 
 
 # %%
+traceroutes = defaultdict(list)
+
+# %%
 # log_file = 'data/cloudflare.txt'
 log_file = 'data/google.txt'
 
-traceroutes = defaultdict(list)
 timestamp = None
 
 with open(log_file) as f:
@@ -77,10 +79,6 @@ plt.grid()
 plt.show()
 
 # %%
-traceroutes['2023-03-06T17:45:18-05:00']
-
-# %%
-# https://networkx.org/documentation/stable/reference/classes/multidigraph.html
 G = nx.MultiDiGraph()
 
 for traceroute in traceroutes.values():
@@ -92,14 +90,12 @@ for traceroute in traceroutes.values():
             G.add_edge(this_host, next_host)
 
 # %%
-# https://networkx.org/documentation/latest/auto_examples/drawing/plot_unix_email.html
-# https://networkx.org/documentation/latest/auto_examples/graphviz_layout/plot_lanl_routes.html
+fig = plt.figure(figsize=(10, 10))
 
-# https://graphviz.org/docs/layouts/dot/
 pos = nx.nx_agraph.pygraphviz_layout(G, prog='dot')
 
-nx.draw_networkx_nodes(G, pos, node_size=200)
-nx.draw_networkx_edges(G, pos, alpha=0.5)
+nx.draw_networkx_nodes(G, pos, node_size=100)
+nx.draw_networkx_edges(G, pos, node_size=100, alpha=0.2)
 nx.draw_networkx_labels(G, pos, font_size=8)
 
 plt.box(False)
