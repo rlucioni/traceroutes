@@ -15,8 +15,8 @@ def strip_parens(val):
 traceroutes = defaultdict(list)
 
 # %%
-# log_file = 'data/cloudflare.txt'
-log_file = 'data/google.txt'
+log_file = 'data/cloudflare.txt'
+# log_file = 'data/google.txt'
 
 timestamp = None
 
@@ -96,7 +96,14 @@ pos = nx.nx_agraph.pygraphviz_layout(G, prog='dot')
 
 nx.draw_networkx_nodes(G, pos, node_size=100)
 nx.draw_networkx_edges(G, pos, node_size=100, alpha=0.2)
-nx.draw_networkx_labels(G, pos, font_size=8)
+nx.draw_networkx_labels(G, pos, font_size=6)
+
+# expand margins to keep labels in frame
+x_values, y_values = zip(*pos.values())
+x_max = max(x_values)
+x_min = min(x_values)
+x_margin = (x_max - x_min) * 0.25
+plt.xlim(x_min - x_margin, x_max + x_margin)
 
 plt.box(False)
 plt.show()
