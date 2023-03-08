@@ -2,3 +2,5 @@ jupytext==1.13.6
 matplotlib==3.5.1
 networkx==3.0
 notebook==6.4.7
+# https://github.com/pygraphviz/pygraphviz/issues/398#issuecomment-1038476921
+# pygraphviz==1.10
