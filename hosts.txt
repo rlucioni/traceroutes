@@ -1,0 +1,15 @@
+1.1.1.1
+google.com
+youtube.com
+facebook.com
+twitter.com
+instagram.com
+wikipedia.org
+yahoo.com
+whatsapp.com
+amazon.com
+reddit.com
+netflix.com
+linkedin.com
+weather.com
+logrocket.com

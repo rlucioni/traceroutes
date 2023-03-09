@@ -1,18 +1,18 @@
 # traceroutes
 
-Tools for generating and navigating lots of `traceroute` output. After activating a virtualenv, install requirements with:
+Tools for generating and working with `traceroute` output. After activating a virtualenv, install requirements with:
 
 ```sh
 make requirements
 ```
 
-Run the `loop.sh` script to log `traceroute` output to text files under `data/`:
+Installing `pygraphviz` requires following [special instructions](https://github.com/pygraphviz/pygraphviz/issues/398#issuecomment-1038476921). Run the `loop.sh` script to run traceroutes for the hosts in `hosts.txt` and log output to `data.txt`:
 
 ```sh
 ./loop.sh
 ```
 
-Use the `parse.py` script to manipulate the logged output, to help hone in on interesting periods to look at in the logs. It's bound to a Jupyter notebook with [Jupytext](https://github.com/mwouts/jupytext). To open it, start Jupyter Notebook with:
+Use the `parse.py` script to manipulate the logged output. It's bound to a Jupyter notebook with [Jupytext](https://github.com/mwouts/jupytext). To open it, start Jupyter Notebook with:
 
 ```sh
 make notebook

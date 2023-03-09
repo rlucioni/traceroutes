@@ -1,10 +1,18 @@
+#!/usr/bin/env bash
+set -e
+
+INPUT='hosts.txt'
+OUTPUT='data.txt'
+
 while true
 do
-    date -Iseconds >> data/google.txt
-    traceroute -q 1 -z 500 www.google.com >> data/google.txt
+    while read -r line
+    do
+      date -Iseconds >> $OUTPUT
+      traceroute -q 1 -z 500 -m 16 -w 2 $line >> $OUTPUT
 
-    date -Iseconds >> data/cloudflare.txt
-    traceroute -q 1 -z 500 1.1.1.1 >> data/cloudflare.txt
+      echo "ok"
 
-    sleep 60
+      sleep 3
+    done < $INPUT
 done
