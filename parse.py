@@ -79,11 +79,14 @@ for traceroute in traceroutes.values():
 # %%
 fig = plt.figure(figsize=(10, 10))
 
-pos = nx.nx_agraph.pygraphviz_layout(G, prog='dot')
+pos = nx.nx_agraph.pygraphviz_layout(G, prog='dot', args='-Grankdir="LR"')
 
 nx.draw_networkx_nodes(G, pos, node_size=1, node_color='k', alpha=0.8)
 nx.draw_networkx_edges(G, pos, node_size=1, width=0.5, arrows=False, alpha=0.2)
-# nx.draw_networkx_labels(G, pos, font_size=6)
+
+# labels = nx.draw_networkx_labels(G, pos, font_size=6)
+# for label in labels.values():
+#     label.set_rotation(-45)
 
 # expand margins to keep labels in frame
 # x_values, y_values = zip(*pos.values())
