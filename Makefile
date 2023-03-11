@@ -1,3 +1,6 @@
+loop:
+	./loop.sh
+
 notebook:
 	jupyter notebook parse.py
 
