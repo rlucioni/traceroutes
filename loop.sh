@@ -4,15 +4,12 @@ set -e
 INPUT='hosts.txt'
 OUTPUT='data.txt'
 
-while true
+while read -r line
 do
-    while read -r line
-    do
-      date -Iseconds >> $OUTPUT
-      traceroute -q 1 -z 500 -m 16 -w 2 $line >> $OUTPUT
+  date -Iseconds >> $OUTPUT
+  traceroute -q 1 -z 500 -m 64 -w 3 $line >> $OUTPUT
 
-      echo "ok"
+  echo "ok"
 
-      sleep 3
-    done < $INPUT
-done
+  sleep 3
+done < $INPUT
