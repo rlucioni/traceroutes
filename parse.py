@@ -77,11 +77,11 @@ for traceroute in traceroutes.values():
             G.add_edge(this_host, next_host)
 
 # %%
-fig = plt.figure(figsize=(10, 10))
+fig = plt.figure(figsize=(15, 8))
 
 pos = nx.nx_agraph.pygraphviz_layout(G, prog='dot', args='-Grankdir="LR"')
 
-# nx.draw_networkx_nodes(G, pos, node_size=1, node_color='k', alpha=0.8)
+# nx.draw_networkx_nodes(G, pos, node_size=1, node_color='k', alpha=0.2)
 nx.draw_networkx_edges(G, pos, node_size=1, width=0.5, arrows=False, alpha=0.2)
 
 # labels = nx.draw_networkx_labels(G, pos, font_size=6)
@@ -96,6 +96,8 @@ nx.draw_networkx_edges(G, pos, node_size=1, width=0.5, arrows=False, alpha=0.2)
 # plt.xlim(x_min - x_margin, x_max + x_margin)
 
 plt.box(False)
-plt.show()
+
+# plt.show()
+plt.savefig('tree.png', dpi=600)
 
 # %%
