@@ -57,7 +57,7 @@ plt.plot(xs, ys)
 plt.ylabel('ms')
 plt.xticks(rotation=-90)
 plt.xlim(-1, len(xs))
-plt.ylim(0, 175)
+plt.ylim(0, 500)
 plt.grid()
 
 plt.show()
@@ -81,7 +81,7 @@ fig = plt.figure(figsize=(10, 10))
 
 pos = nx.nx_agraph.pygraphviz_layout(G, prog='dot', args='-Grankdir="LR"')
 
-nx.draw_networkx_nodes(G, pos, node_size=1, node_color='k', alpha=0.8)
+# nx.draw_networkx_nodes(G, pos, node_size=1, node_color='k', alpha=0.8)
 nx.draw_networkx_edges(G, pos, node_size=1, width=0.5, arrows=False, alpha=0.2)
 
 # labels = nx.draw_networkx_labels(G, pos, font_size=6)
